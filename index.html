@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BA Fashion - Visual Grade Descriptors Guide</title>
+    <title>BA (Hons) Fashion - Visual Grade Descriptors Guide</title>
     
     <!-- Load React -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/17.0.2/umd/react.production.min.js"></script>
@@ -171,18 +171,16 @@
     <div class="ku-content-wrapper">
         <div class="ku-content">
             <div class="header">
-                <h1>Kingston School of Art</h1>
-                <h2>BA Fashion - Understanding Grade Descriptors</h2>
-                <p>This interactive guide helps you understand the grade descriptors used to assess your work in the Fashion BA program. Select different grade bands to see what tutors look for and how to aim for higher grades.</p>
+                <img src="https://www.kingston.ac.uk/includes/assets/logos/logo-kingston-school-of-art.svg" alt="Kingston School of Art Logo" class="h-16 mb-4">
+                <h1 class="text-2xl font-bold">Understanding Grade Descriptors</h1>
+                <p>This interactive guide helps you understand the grade descriptors used to assess your work in the BA (Hons) Fashion program. Select different grade bands to see what tutors look for and how to aim for higher grades.</p>
             </div>
-            
-            <p><a class="ku-button" href="#" title="Back to Module Home Page">Back to Module Home Page</a></p>
             
             <div id="grade-descriptors-app"></div>
         </div>
         
         <div class="footer">
-            <p>Kingston School of Art - BA Fashion Program - Assessment Knowledge Base</p>
+            <p>Kingston School of Art - BA (Hons) Fashion Program - Assessment Knowledge Base</p>
             <p>© 2025 Kingston University</p>
         </div>
     </div>
@@ -296,7 +294,7 @@
           
           return (
             <div className="p-0">
-              <h2 className="text-2xl font-bold mb-6 border-b-2 border-gray-200 pb-3">Understanding Fashion Design Grade Descriptors</h2>
+
               
               <p className="mb-6 text-gray-700">
                 Click on each grade band to understand what tutors are looking for when assessing your work. This will help you aim for higher grades by understanding the key differences between each level.
@@ -415,8 +413,8 @@
               </div>
               
               <p className="mt-6">
-                <a className="ku-button" href="https://canvas.kingston.ac.uk/" target="_blank">Access Canvas</a>
-                <a className="ku-button ml-4" href="#" onClick={(e) => {e.preventDefault(); window.print();}}>Print This Guide</a>
+                <a className="ku-button" href="#" title="Back to Module Home Page">Back to Module Home Page</a>
+                <a className="ku-button ml-4" href="https://canvas.kingston.ac.uk/" target="_blank">Access full Grade Descriptors</a>
               </p>
             </div>
           );
