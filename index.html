@@ -294,11 +294,6 @@
           
           return (
             <div className="p-0">
-
-              
-              <p className="mb-6 text-gray-700">
-               
-              
               <div className="flex flex-wrap gap-2 mb-6 justify-center">
                 {grades.map(grade => (
                   <button
@@ -346,63 +341,63 @@
                 <h3 className="font-bold mb-2">How to move up to the next grade band:</h3>
                 <ul className="list-disc pl-5 space-y-2">
                   {activeGrade === 'fail' && (
-                    <div>
+                    <>
                       <li>Develop basic knowledge of skills and practices covered in the module</li>
                       <li>Make some attempt to analyze materials rather than just describe</li>
                       <li>Apply appropriate methods to solve basic problems</li>
                       <li>Show more attention to presentation basics</li>
                       <li>Begin to engage with at least some new ideas</li>
-                    </div>
+                    </>
                   )}
                   {activeGrade === 'marginal-fail' && (
-                    <div>
+                    <>
                       <li>Demonstrate more consistent knowledge of required skills</li>
                       <li>Begin to analyze your work rather than just describing it</li>
                       <li>Make decisions with some evidence to support them</li>
                       <li>Improve basic technical and presentation skills</li>
                       <li>Show at least some willingness to explore beyond familiar ideas</li>
-                    </div>
+                    </>
                   )}
                   {activeGrade === 'third' && (
-                    <div>
+                    <>
                       <li>Expand your research beyond the obvious sources</li>
                       <li>Focus more on analysis rather than description</li>
                       <li>Show more attention to presentation details</li>
                       <li>Demonstrate more consistent professionalism in your approach</li>
                       <li>Try to experiment with new ideas rather than staying in comfort zone</li>
-                    </div>
+                    </>
                   )}
                   {activeGrade === 'lower-second' && (
-                    <div>
+                    <>
                       <li>Deepen your research and make more meaningful connections</li>
                       <li>Develop stronger analytical skills in your design development</li>
                       <li>Improve the professionalism of your presentation</li>
                       <li>Take more creative risks and explore new territory</li>
                       <li>Recognize more of the complexities in your area of study</li>
-                    </div>
+                    </>
                   )}
                   {activeGrade === 'upper-second' && (
-                    <div>
+                    <>
                       <li>Extend your research beyond the expected sources</li>
                       <li>Demonstrate more sophisticated analysis and critical thinking</li>
                       <li>Refine technical and presentation skills to a higher level</li>
                       <li>Show more innovation and well-considered experimentation</li>
                       <li>Take more creative risks in your approach to design</li>
-                    </div>
+                    </>
                   )}
                   {activeGrade === 'first' && (
-                    <div>
+                    <>
                       <li>Pursue truly exceptional and original research</li>
                       <li>Demonstrate outstanding critical thinking beyond normal expectations</li>
                       <li>Perfect every aspect of technical execution</li>
                       <li>Take well-judged creative risks that result in highly innovative outcomes</li>
                       <li>Show evidence of innovation throughout all aspects of your work</li>
-                    </div>
+                    </>
                   )}
                   {activeGrade === 'first-plus' && (
-                    <div>
+                    <>
                       <li>You're already at the highest grade band - maintaining this level of excellence requires consistent outstanding work across all aspects!</li>
-                    </div>
+                    </>
                   )}
                 </ul>
               </div>
