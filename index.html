@@ -41,7 +41,7 @@
         .header {
             text-align: center;
             margin-bottom: 30px;
-            border-bottom: 3px solid #FFE800;
+            border-bottom: 3px solid #aaaaaa;
             padding-bottom: 20px;
         }
         
@@ -104,8 +104,8 @@
         <div class="ku-content">
             <div class="header">
                 <img src="https://www.kingston.ac.uk/includes/assets/logos/logo-kingston-school-of-art.svg" alt="Kingston School of Art Logo" class="h-16 mb-4">
-                <h1 class="text-2xl font-bold">Understanding Grade Descriptors</h1>
-                <p>This interactive guide helps you understand the grade descriptors used to assess your work on the BA (Hons) Fashion program. Click on each grade band to see what tutors look for and to understand the key differences between grade bands. This will help you aim for higher grades by identifying specific areas for improvement.</p>
+                <h1 class="text-2xl font-bold mb-4">Understanding Grade Descriptors</h1>
+                <p>This interactive guide aims to help you understand the grade descriptors used to assess your work on the BA (Hons) Fashion program. Click on each grade band to see what tutors look for and to understand the key differences between grade bands. This will help you aim for higher grades by identifying specific areas for improvement.</p>
             </div>
             
             <div id="grade-descriptors-app"></div>
@@ -244,8 +244,7 @@
                     }`}
                     onClick={() => setActiveGrade(grade.id)}
                   >
-                    {grade.title}
-                    <span className="block text-sm font-normal">{grade.range}</span>
+                    {grade.range}
                   </button>
                 ))}
               </div>
@@ -346,8 +345,8 @@
               </div>
               
               <div className="mt-6">
-                <a className="ku-button" href="https://canvas.kingston.ac.uk/courses/32501" title="Back to Module Home Page">Back to Module Home Page</a>
-                <a className="ku-button ml-4" href="https://canvas.kingston.ac.uk/courses/32501/pages/full-grade-descriptors" target="_blank">Access full Grade Descriptors</a>
+                <a className="ku-button" href="https://canvas.kingston.ac.uk/courses/32501/pages/full-grade-descriptors" target="_blank">Access full Grade Descriptors</a>
+                <a className="ku-button ml-4" href="https://canvas.kingston.ac.uk/courses/32501" title="Back to Module Home Page">Back to Module Home Page</a>
               </div>
             </div>
           );
