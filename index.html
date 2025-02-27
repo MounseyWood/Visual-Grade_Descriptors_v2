@@ -45,25 +45,6 @@
             padding-bottom: 20px;
         }
         
-        .header h1 {
-            font-size: 2rem;
-            color: #333;
-            margin-bottom: 10px;
-        }
-        
-        .header h2 {
-            font-size: 1.5rem;
-            color: #555;
-            margin-bottom: 20px;
-        }
-        
-        .header p {
-            color: #666;
-            max-width: 800px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
-        
         .ku-button {
             display: inline-block;
             background-color: #FFE800;
@@ -91,19 +72,6 @@
             border-top: 1px solid #eee;
         }
         
-        /* Kingston School of Art branding */
-        .ksa-yellow {
-            background-color: #FFE800;
-        }
-        
-        .ksa-text {
-            color: #FFE800;
-        }
-        
-        .ksa-border {
-            border-color: #FFE800;
-        }
-        
         /* Table styling from KU Canvas */
         table {
             width: 100%;
@@ -128,42 +96,6 @@
             text-align: left;
             font-weight: bold;
             margin-bottom: 10px;
-        }
-        
-        /* Maintain original grade color scheme */
-        .grade-first-plus {
-            background-color: #166534;
-            color: white;
-        }
-        
-        .grade-first {
-            background-color: #16a34a;
-            color: white;
-        }
-        
-        .grade-upper-second {
-            background-color: #22c55e;
-            color: white;
-        }
-        
-        .grade-lower-second {
-            background-color: #facc15;
-            color: black;
-        }
-        
-        .grade-third {
-            background-color: #eab308;
-            color: black;
-        }
-        
-        .grade-marginal-fail {
-            background-color: #f59e0b;
-            color: black;
-        }
-        
-        .grade-fail {
-            background-color: #dc2626;
-            color: white;
         }
     </style>
 </head>
@@ -194,7 +126,8 @@
               id: 'first-plus',
               title: 'First Class (A+)',
               range: '85-100%',
-              colorClass: 'grade-first-plus',
+              color: 'bg-green-700',
+              textColor: 'text-white',
               qualities: [
                 { title: 'Research', description: 'Exceptional evidence of research skills with a comprehensive range of evidence' },
                 { title: 'Design Development', description: 'Outstanding level of study that goes beyond the ideas and practices studied' },
@@ -208,7 +141,8 @@
               id: 'first',
               title: 'First Class (A)',
               range: '70-84%',
-              colorClass: 'grade-first',
+              color: 'bg-green-600',
+              textColor: 'text-white',
               qualities: [
                 { title: 'Research', description: 'Excellent and detailed understanding with strong evidence and critical analysis' },
                 { title: 'Design Development', description: 'Excellent level of study with creative and critical response to content' },
@@ -222,7 +156,8 @@
               id: 'upper-second',
               title: 'Upper Second (B)',
               range: '60-69%',
-              colorClass: 'grade-upper-second',
+              color: 'bg-green-500',
+              textColor: 'text-white',
               qualities: [
                 { title: 'Research', description: 'Good knowledge and understanding with solid research skills' },
                 { title: 'Design Development', description: 'Good ability to analyze ideas and concepts critically' },
@@ -236,7 +171,8 @@
               id: 'lower-second',
               title: 'Lower Second (C)',
               range: '50-59%',
-              colorClass: 'grade-lower-second',
+              color: 'bg-yellow-400',
+              textColor: 'text-black',
               qualities: [
                 { title: 'Research', description: 'Some knowledge and understanding, may be limited in scope' },
                 { title: 'Design Development', description: 'Some critical analysis but may not always focus on key points' },
@@ -250,7 +186,8 @@
               id: 'third',
               title: 'Third Class (D)',
               range: '40-49%',
-              colorClass: 'grade-third',
+              color: 'bg-yellow-500',
+              textColor: 'text-black',
               qualities: [
                 { title: 'Research', description: 'Basic knowledge and understanding of required skills and practices' },
                 { title: 'Design Development', description: 'Descriptive rather than analytical, with oversimplified decision-making' },
@@ -264,7 +201,8 @@
               id: 'marginal-fail',
               title: 'Marginal Fail (FM)',
               range: '35-39%',
-              colorClass: 'grade-marginal-fail',
+              color: 'bg-amber-500',
+              textColor: 'text-black',
               qualities: [
                 { title: 'Research', description: 'Limited knowledge and understanding of required skills and practices' },
                 { title: 'Design Development', description: 'Descriptive with little attempt to analyze or develop ideas' },
@@ -278,7 +216,8 @@
               id: 'fail',
               title: 'Fail (F)',
               range: '0-34%',
-              colorClass: 'grade-fail',
+              color: 'bg-red-600',
+              textColor: 'text-white',
               qualities: [
                 { title: 'Research', description: 'Little knowledge or understanding of required skills and practices' },
                 { title: 'Design Development', description: 'No attempt to analyze ideas/themes or arguments' },
@@ -293,14 +232,14 @@
           const activeGradeData = grades.find(grade => grade.id === activeGrade);
           
           return (
-            <div className="p-0">
+            <div className="max-w-4xl mx-auto p-0">
               <div className="flex flex-wrap gap-2 mb-6 justify-center">
                 {grades.map(grade => (
                   <button
                     key={grade.id}
                     className={`px-4 py-2 rounded-md font-medium transition-all ${
                       activeGrade === grade.id ? 
-                      `${grade.colorClass} ring-2 ring-offset-2 ring-gray-400` : 
+                      `${grade.color} ${grade.textColor} ring-2 ring-offset-2 ring-gray-400` : 
                       'bg-gray-100 text-gray-700 hover:bg-gray-200'
                     }`}
                     onClick={() => setActiveGrade(grade.id)}
@@ -311,7 +250,7 @@
                 ))}
               </div>
               
-              <div className={`${activeGradeData.colorClass} p-6 rounded-lg mb-6`}>
+              <div className={`${activeGradeData.color} ${activeGradeData.textColor} p-6 rounded-lg mb-6`}>
                 <h2 className="text-xl font-bold mb-2">{activeGradeData.title} ({activeGradeData.range})</h2>
                 <p className="text-lg mb-4">Overall Quality: {
                   activeGrade === 'first-plus' ? 'Outstanding' :
@@ -341,63 +280,63 @@
                 <h3 className="font-bold mb-2">How to move up to the next grade band:</h3>
                 <ul className="list-disc pl-5 space-y-2">
                   {activeGrade === 'fail' && (
-                    <>
+                    <div>
                       <li>Develop basic knowledge of skills and practices covered in the module</li>
                       <li>Make some attempt to analyze materials rather than just describe</li>
                       <li>Apply appropriate methods to solve basic problems</li>
                       <li>Show more attention to presentation basics</li>
                       <li>Begin to engage with at least some new ideas</li>
-                    </>
+                    </div>
                   )}
                   {activeGrade === 'marginal-fail' && (
-                    <>
+                    <div>
                       <li>Demonstrate more consistent knowledge of required skills</li>
                       <li>Begin to analyze your work rather than just describing it</li>
                       <li>Make decisions with some evidence to support them</li>
                       <li>Improve basic technical and presentation skills</li>
                       <li>Show at least some willingness to explore beyond familiar ideas</li>
-                    </>
+                    </div>
                   )}
                   {activeGrade === 'third' && (
-                    <>
+                    <div>
                       <li>Expand your research beyond the obvious sources</li>
                       <li>Focus more on analysis rather than description</li>
                       <li>Show more attention to presentation details</li>
                       <li>Demonstrate more consistent professionalism in your approach</li>
                       <li>Try to experiment with new ideas rather than staying in comfort zone</li>
-                    </>
+                    </div>
                   )}
                   {activeGrade === 'lower-second' && (
-                    <>
+                    <div>
                       <li>Deepen your research and make more meaningful connections</li>
                       <li>Develop stronger analytical skills in your design development</li>
                       <li>Improve the professionalism of your presentation</li>
                       <li>Take more creative risks and explore new territory</li>
                       <li>Recognize more of the complexities in your area of study</li>
-                    </>
+                    </div>
                   )}
                   {activeGrade === 'upper-second' && (
-                    <>
+                    <div>
                       <li>Extend your research beyond the expected sources</li>
                       <li>Demonstrate more sophisticated analysis and critical thinking</li>
                       <li>Refine technical and presentation skills to a higher level</li>
                       <li>Show more innovation and well-considered experimentation</li>
                       <li>Take more creative risks in your approach to design</li>
-                    </>
+                    </div>
                   )}
                   {activeGrade === 'first' && (
-                    <>
+                    <div>
                       <li>Pursue truly exceptional and original research</li>
                       <li>Demonstrate outstanding critical thinking beyond normal expectations</li>
                       <li>Perfect every aspect of technical execution</li>
                       <li>Take well-judged creative risks that result in highly innovative outcomes</li>
                       <li>Show evidence of innovation throughout all aspects of your work</li>
-                    </>
+                    </div>
                   )}
                   {activeGrade === 'first-plus' && (
-                    <>
+                    <div>
                       <li>You're already at the highest grade band - maintaining this level of excellence requires consistent outstanding work across all aspects!</li>
-                    </>
+                    </div>
                   )}
                 </ul>
               </div>
