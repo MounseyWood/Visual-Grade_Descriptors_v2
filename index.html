@@ -1,33 +1,4 @@
-/* Remove the flip card styles */
-        .criteria-title {
-            position: relative;
-            cursor: help;
-            font-weight: bold;
-            border-bottom: 1px dotted #666;
-        }
-        
-        .criteria-tooltip {
-            visibility: hidden;
-            position: absolute;
-            bottom: 125%;
-            left: 0;
-            width: 220px;
-            background-color: #f0f0f0;
-            color: #333;
-            text-align: left;
-            border-radius: 0;
-            padding: 8px;
-            z-index: 1;
-            font-weight: normal;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-        
-        .criteria-title:hover .criteria-tooltip {
-            visibility: visible;
-            opacity: 1;
-        }<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -279,26 +250,11 @@
               <table>
                 <caption>
                   <h3 className="text-xl font-bold mb-2">Assessment Criteria</h3>
-                  <p className="text-sm text-gray-600 mb-2">(Hover over criteria titles for more information)</p>
                 </caption>
                 <tbody>
                   {activeGradeData.qualities.map((quality, index) => (
                     <tr key={index}>
-                      <th style={{width: "25%"}}>
-                        <span className="criteria-title">
-                          {quality.title}
-                          <span className="criteria-tooltip">
-                            {quality.title === "Research & Analysis" && 
-                              "Critical examination of context and interpretation of sources"}
-                            {quality.title === "Experimentation & Practice" && 
-                              "Testing of subject, thinking through making, technique, risk taking and problem solving"}
-                            {quality.title === "Communication & Presentation" && 
-                              "Realisation of intentions and skill in appropriate media with awareness of audience needs"}
-                            {quality.title === "Personal & Professional Development" && 
-                              "Planning, time-management, commitment, and subject engagement"}
-                          </span>
-                        </span>
-                      </th>
+                      <th style={{width: "25%"}}>{quality.title}</th>
                       <td>{quality.description}</td>
                     </tr>
                   ))}
@@ -392,6 +348,17 @@
                       >
                         &times;
                       </button>
+                    </div>
+                    
+                    <div className="mb-4 p-4 bg-gray-50 rounded-none border border-gray-200">
+                      <h4 className="font-bold mb-2">Learning Outcomes & Assessment Criteria</h4>
+                      <p className="mb-2">Each criterion in the matrix relates to one of the 4 program learning outcomes:</p>
+                      <ol className="list-decimal pl-5">
+                        <li><strong>Research and Analysis:</strong> Critical examination of context and interpretation of sources</li>
+                        <li><strong>Experimentation and Practice:</strong> Testing of subject, thinking through making, technique, risk taking and problem solving</li>
+                        <li><strong>Communication and Presentation:</strong> Realisation of intentions and skill in appropriate media with awareness of audience needs</li>
+                        <li><strong>Personal and Professional Development:</strong> Planning, time-management, commitment & subject engagement</li>
+                      </ol>
                     </div>
                     
                     <div className="overflow-x-auto">
