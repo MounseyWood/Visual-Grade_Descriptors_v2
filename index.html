@@ -117,6 +117,9 @@
     </div>
     
     <script type="text/babel">
+        // Import useState from React
+        const { useState } = React;
+        
         const GradeDescriptors = () => {
           const [activeGrade, setActiveGrade] = useState('first-plus');
           const [showMatrix, setShowMatrix] = useState(false);
@@ -126,7 +129,7 @@
               id: 'first-plus',
               title: 'Distinction',
               range: '85% and above',
-              color: 'bg-[#00FF00]',
+              color: 'bg-[#80FF80]',
               textColor: 'text-black',
               qualities: [
                 { title: 'Research & Analysis', description: 'Exceptional levels of research and synthesis. Original and convincing interpretation. Critical examination of context and sources with comprehensive range of evidence.' },
@@ -139,7 +142,7 @@
               id: 'first',
               title: 'First Class',
               range: '70-84%',
-              color: 'bg-[#7FFF00]',
+              color: 'bg-[#BFFF80]',
               textColor: 'text-black',
               qualities: [
                 { title: 'Research & Analysis', description: 'Extensive research, independent synthesis and evaluation. Critical examination of context and sources with wide-ranging and well-informed research.' },
@@ -152,7 +155,7 @@
               id: 'upper-second',
               title: 'Upper Second (2:1)',
               range: '60-69%',
-              color: 'bg-[#FFFF00]',
+              color: 'bg-[#FFFF80]',
               textColor: 'text-black',
               qualities: [
                 { title: 'Research & Analysis', description: 'Wide ranging and well-informed research and accurate evaluation of context and sources with evidence of independent thinking.' },
@@ -165,7 +168,7 @@
               id: 'lower-second',
               title: 'Lower Second (2:2)',
               range: '50-59%',
-              color: 'bg-[#FFD700]',
+              color: 'bg-[#FFE880]',
               textColor: 'text-black',
               qualities: [
                 { title: 'Research & Analysis', description: 'Accurate and appropriate research of elements. Critical examination of context and interpretation of sources may lack some accuracy.' },
@@ -178,7 +181,7 @@
               id: 'third',
               title: 'Third Class',
               range: '40-49%',
-              color: 'bg-[#FFA500]',
+              color: 'bg-[#FFCC80]',
               textColor: 'text-black',
               qualities: [
                 { title: 'Research & Analysis', description: 'Adequate range from standard sources, may lack accurate interpretation. Basic knowledge and understanding of required skills and practices.' },
@@ -191,8 +194,8 @@
               id: 'marginal-fail',
               title: 'Marginal Fail',
               range: '35-39%',
-              color: 'bg-[#FF4500]',
-              textColor: 'text-white',
+              color: 'bg-[#FF9980]',
+              textColor: 'text-black',
               qualities: [
                 { title: 'Research & Analysis', description: 'Limited or no source information evidenced. Limited knowledge and understanding of required skills and practices.' },
                 { title: 'Experimentation & Practice', description: 'Very limited technique or exploration of alternatives. Not always accurate/appropriate to solve straightforward problems.' },
@@ -204,8 +207,8 @@
               id: 'fail',
               title: 'Fail',
               range: '0-34%',
-              color: 'bg-[#FF0000]',
-              textColor: 'text-white',
+              color: 'bg-[#FF8080]',
+              textColor: 'text-black',
               qualities: [
                 { title: 'Research & Analysis', description: 'Little or no source information evidenced. Little knowledge or understanding of required skills and practices.' },
                 { title: 'Experimentation & Practice', description: 'Very limited technique or exploration of alternatives. Poor technical skills with inadequate application of methods.' },
@@ -222,7 +225,7 @@
             grades[2], // Upper Second
             grades[3], // Lower Second
             grades[4], // Third Class
-            grades[7], // Fail (using this instead of Marginal Fail)
+            grades[6], // Fail (using this instead of Marginal Fail)
           ];
           
           const activeGradeData = grades.find(grade => grade.id === activeGrade);
@@ -441,9 +444,6 @@
             </div>
           );
         };
-
-        // Import useState from React
-        const { useState } = React;
         
         // Render the app
         ReactDOM.render(<GradeDescriptors />, document.getElementById('grade-descriptors-app'));
