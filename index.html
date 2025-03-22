@@ -218,14 +218,15 @@
             }
           ];
           
-          // Define matrix grades for the popup (combining Marginal Fail and Fail)
+          // Include all grade levels for the matrix popup
           const matrixGrades = [
             grades[0], // Distinction
             grades[1], // First Class
-            grades[2], // Upper Second
-            grades[3], // Lower Second
+            grades[2], // Upper Second (2:1)
+            grades[3], // Lower Second (2:2)
             grades[4], // Third Class
-            grades[6], // Fail (using this instead of Marginal Fail)
+            grades[5], // Marginal Fail
+            grades[6]  // Fail
           ];
           
           const activeGradeData = grades.find(grade => grade.id === activeGrade);
@@ -397,6 +398,7 @@
                             <td>Wide ranging and well-informed research and accurate evaluation.</td>
                             <td>Accurate and appropriate research of elements.</td>
                             <td>Adequate range from standard sources.</td>
+                            <td>Limited source information evidenced.</td>
                             <td>Little or no source information evidenced.</td>
                           </tr>
                           <tr>
@@ -406,7 +408,8 @@
                             <td>Evidence of conceptual risk taking and personal evaluation.</td>
                             <td>Evidence of exploration of materials and process.</td>
                             <td>Operates within well-established ideas and processes.</td>
-                            <td>Very limited technique or exploration.</td>
+                            <td>Very limited technique or exploration of alternatives.</td>
+                            <td>Poor technical skills with inadequate methods.</td>
                           </tr>
                           <tr>
                             <th>Communication & Presentation</th>
@@ -415,7 +418,8 @@
                             <td>Very good awareness of audience and context.</td>
                             <td>Good judgement in organization of materials.</td>
                             <td>Adequate presentation but may lack professionalism.</td>
-                            <td>Ineffective use of media and communication.</td>
+                            <td>Presentation skills not sufficient for this level.</td>
+                            <td>Poor presentation skills that don't meet requirements.</td>
                           </tr>
                           <tr>
                             <th>Personal & Professional Development</th>
@@ -424,7 +428,8 @@
                             <td>Self-directed reflection and planning process.</td>
                             <td>Actively working to develop understanding.</td>
                             <td>Evidence of awareness of subject and strengths.</td>
-                            <td>Little/no awareness of subject or reflection.</td>
+                            <td>Sometimes works productively individually or in a team.</td>
+                            <td>Does not work productively individually or in a team.</td>
                           </tr>
                         </tbody>
                       </table>
