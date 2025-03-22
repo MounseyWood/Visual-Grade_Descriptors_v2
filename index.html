@@ -215,6 +215,16 @@
             }
           ];
           
+          // Define matrix grades for the popup (combining Marginal Fail and Fail)
+          const matrixGrades = [
+            grades[0], // Distinction
+            grades[1], // First Class
+            grades[2], // Upper Second
+            grades[3], // Lower Second
+            grades[4], // Third Class
+            grades[7], // Fail (using this instead of Marginal Fail)
+          ];
+          
           const activeGradeData = grades.find(grade => grade.id === activeGrade);
           
           return (
@@ -366,12 +376,14 @@
                         <thead>
                           <tr>
                             <th>Criteria</th>
-                            <th>Distinction (85%+)</th>
-                            <th>First (70-84%)</th>
-                            <th>2:1 (60-69%)</th>
-                            <th>2:2 (50-59%)</th>
-                            <th>Third (40-49%)</th>
-                            <th>Fail (0-39%)</th>
+                            {matrixGrades.map((grade) => (
+                              <th 
+                                key={grade.id}
+                                className={`${grade.color} ${grade.textColor}`}
+                              >
+                                {grade.title} ({grade.range})
+                              </th>
+                            ))}
                           </tr>
                         </thead>
                         <tbody>
