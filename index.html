@@ -1,65 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+     <!-- 
+    ==============================================
+    CUSTOMIZATION GUIDE - DOCUMENT METADATA
+    ==============================================
+    - Update the title tag to match your specific program or course
+    - Modify meta tags if you need to add additional SEO information
+    -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BA (Hons) Fashion - Visual Grade Descriptors Guide</title>
-    
+    <!-- 
+    ==============================================
+    EXTERNAL DEPENDENCIES
+    ==============================================
+    - These scripts load React and Babel from CDN
+    - Only modify these if you need to update to newer versions
+    -->
     <!-- Load React -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/17.0.2/umd/react.production.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/17.0.2/umd/react-dom.production.min.js"></script>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/17.0.2/umd/react-dom.production.min.js"></script>   
     <!-- Load Babel to handle JSX -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
-    
     <!-- Tailwind CSS for styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     
     <style>
-        /* CUSTOMIZATION: Main color scheme
-     * - Background color (#ffffff)
-     * - Primary text color (#333)
-     * - Accent button color (#FFF200)
-     * You can modify these values to match your institution's branding
-     */
+     /* 
+        ==============================================
+        CUSTOMIZATION GUIDE - STYLING - FROM KSA CANVAS GUIDE (KU)
+        ==============================================
+        The styles below control the appearance of the application.
+        You can modify colours, spacing, fonts, etc. to match your branding.
+        
+        COLOR SCHEME
+        - Main Background: #ffffff (white)
+        - Text Color: #333 (dark grey)
+        - Accent Color: #FFF200 (yellow)
+        - Table Header Background: #f1f1f1 (light grey)
+        - Border Color: #ddd (lighter grey)
+        */
         body {
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: Arial, Helvetica, sans-serif; /* CUSTOMIZE: Font family */
             background-color: #ffffff; /* CUSTOMIZE: Main background colour */
             padding: 0;
             margin: 0;
             color: #333; /* CUSTOMIZE: Main text colour */
         }
-        /* CUSTOMIZATION: Content width and spacing
-     * - Change max-width value to adjust the overall width of the content
-     * - Modify padding to change spacing around content
-     */
+       /* CUSTOMIZE: Content container width and spacing */
         .ku-content-wrapper {
             max-width: 1200px; /* CUSTOMIZE: Adjust for wider/narrower layout */
             margin: 0 auto;
             padding: 20px;
         }
-        
+        /* CUSTOMIZE: Main content area styling */
         .ku-content {
             background-color: white;
-            padding: 30px;
+            padding: 30px; /* CUSTOMIZE: Inner padding */
             margin-bottom: 30px;
         }
-        
+        /* CUSTOMIZE: Header section styling */
         .header {
             text-align: center;
             margin-bottom: 30px;
-            border-bottom: 3px solid #aaaaaa;
+            border-bottom: 3px solid #aaaaaa; /* CUSTOMIZE: Separator line */
             padding-bottom: 20px;
         }
-        
+         /* CUSTOMIZE: Button styling */
         .ku-button {
             display: inline-block;
-            background-color: #FFF200;
-            color: #000;
+            background-color: #FFF200; /* CUSTOMIZE: Button colour */
+            color: #000; /* CUSTOMIZE: Button text colour */
             font-weight: bold;
             font-size: 1rem;
             padding: 8px 15px;
-            border-radius: 0;
+            border-radius: 0; /* CUSTOMIZE: Button corner roundness */
             text-decoration: none;
             margin: 10px 0;
             border: none;
@@ -68,19 +84,24 @@
         }
         
         .ku-button:hover {
-            background-color: #FFF200;
+            background-color: #FFF200; /* CUSTOMIZE: Button hover colour */
         }
-        
+         /* CUSTOMIZE: Footer styling */
         .footer {
             text-align: center;
             margin-top: 30px;
             padding: 20px;
-            color: #666;
+            color: #666; /* CUSTOMIZE: Footer text colour */
             font-size: 0.9rem;
-            border-top: 1px solid #eee;
+            border-top: 1px solid #eee; /* CUSTOMIZE: Footer separator */
         }
         
-        /* Table styling from KU Canvas */
+       /* 
+        ==============================================
+        CUSTOMIZATION GUIDE - TABLE STYLING - FROM KSA CANVAS GUIDE (KU)
+        ==============================================
+        These styles control the appearance of data tables.
+        */
         table {
             width: 100%;
             border-collapse: collapse;
@@ -88,15 +109,15 @@
         }
         
         th {
-            background-color: #f1f1f1;
+            background-color: #f1f1f1; /* CUSTOMIZE: Table header background */
             text-align: left;
             padding: 12px;
-            border: 1px solid #ddd;
+            border: 1px solid #ddd; /* CUSTOMIZE: Table border color */
         }
         
         td {
             padding: 12px;
-            border: 1px solid #ddd;
+            border: 1px solid #ddd; /* CUSTOMIZE: Table border color */
             vertical-align: top;
         }
         
@@ -108,20 +129,50 @@
     </style>
 </head>
 <body>
+    <!-- 
+    ==============================================
+    MAIN CONTENT CONTAINER
+    ==============================================
+    This is the main wrapper for all content.
+    -->
     <div class="ku-content-wrapper">
+          <!-- 
+        ==============================================
+        CONTENT SECTION
+        ==============================================
+        Contains the header and React application.
+        -->
         <div class="ku-content">
-            <!-- HEADER SECTION:
-  You can customize the title, image, and description text in this section.
-  The image source should be updated to match your file location. -->
+            <!-- 
+            ==============================================
+            HEADER SECTION
+            ==============================================
+            CUSTOMIZATION:
+            - Update the .png source to your saved image path
+            - Modify the title and descriptive text
+            -->
             <div class="header">
                 <img src="understanding_grade_descriptors_BA_Fashion.png" alt="Kingston School of Art Logo" class="w-64 sm:w-72 md:w-80 lg:w-96 mb-6 mx-auto block object-contain">
                 <h1 class="text-2xl font-bold mb-4">Understanding Grade Descriptors</h1>
                 <p>This interactive guide aims to help you understand the grade descriptors used to assess your work on the BA (Hons) Fashion program. Click on each grade band to see what tutors look for, and to understand the key differences between grade bands. This will help you in your efforts to achieve higher grades, through identifying specific areas for improvement.</p>
             </div>
-            
+            <!-- 
+            ==============================================
+            REACT APPLICATION CONTAINER
+            ==============================================
+            This div is where the React application will be mounted.
+            Do not modify this div's ID.
+            -->
             <div id="grade-descriptors-app"></div>
         </div>
-        
+         <!-- 
+        ==============================================
+        FOOTER SECTION
+        ==============================================
+        CUSTOMIZATION:
+        - Update the text with your Kingston University school faculty and program name
+        - Modify the copyright information to the year of issue
+        -->
         <div class="footer">
             <p>Kingston School of Art - BA (Hons) Fashion Program - Learning Outcomes, Feedback and Assessment Knowledge Base</p>
             <p>© 2025 Kingston University</p>
@@ -131,26 +182,39 @@
     <script type="text/babel">
         // Import useState from React
         const { useState } = React;
-        /**
-     * MAIN COMPONENT: Grade Descriptors Application
-     * 
-     * CUSTOMIZATION GUIDE:
-     * 1. To add new grade bands: Add a new entry to the "grades" array below
-     * 2. To modify existing grade bands: Edit the properties of each grade object
-     * 3. To change the default selected grade: Modify the useState initial value
-     */
+     /**
+         * ==============================================
+         * GRADE DESCRIPTORS COMPONENT
+         * ==============================================
+         * This is the main React component that powers the interactive guide.
+         * 
+         * CUSTOMIZATION GUIDE:
+         * 1. Default selected grade: Change 'first-plus' in useState() to another grade ID
+         * 2. Grade bands: Add, remove, or modify entries in the 'grades' array
+         * 3. Grade criteria: Modify the 'qualities' array within each grade object
+         */
         const GradeDescriptors = () => {
-            // CUSTOMIZE: Change 'first-plus' to set a different default selected grade
+               // State for tracking the currently selected grade and UI view toggles
+          // CUSTOMIZE: Change 'first-plus' to set a different default selected grade
           const [activeGrade, setActiveGrade] = useState('first-plus');
           const [showMatrix, setShowMatrix] = useState(false);
-           // CUSTOMIZE: Grade bands and their properties
-      // Each grade object has the following properties:
-      // - id: Unique identifier for the grade (used for selection)
-      // - title: Display name shown to users
-      // - range: Percentage range for this grade
-      // - color: Background colour - for this a traffic light system has been employed, high to low, green through amber to red, (Tailwind or hex code)
-      // - textColor: Text colour (Tailwind)
-      // - qualities: Array of criteria and descriptions
+          /**
+           * ==============================================
+           * GRADE DATA
+           * ==============================================
+           * This array contains all the grade bands and their descriptions.
+           * 
+           * CUSTOMIZATION GUIDE:
+           * - To add a new grade band: Copy an existing object and modify all properties
+           * - To change a grade band: Modify the relevant object properties
+           * - Required properties for each grade:
+           *   - id: Unique identifier (used for selection)
+           *   - title: Display name
+           *   - range: Percentage range text
+           *   - color: Background color - a simple traffic-light system from high to low, green through amber to red has been employed, (Tailwind class or hex)
+           *   - textColor: Text color (Tailwind class)
+           *   - qualities: Array of assessment criteria objects
+           */
           const grades = [
             {
               id: 'first-plus',
