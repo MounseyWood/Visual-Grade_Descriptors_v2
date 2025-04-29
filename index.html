@@ -16,16 +16,25 @@
     <script src="https://cdn.tailwindcss.com"></script>
     
     <style>
+        /* CUSTOMIZATION: Main color scheme
+     * - Background color (#ffffff)
+     * - Primary text color (#333)
+     * - Accent button color (#FFF200)
+     * You can modify these values to match your institution's branding
+     */
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background-color: #ffffff;
+            background-color: #ffffff; /* CUSTOMIZE: Main background colour */
             padding: 0;
             margin: 0;
-            color: #333;
+            color: #333; /* CUSTOMIZE: Main text colour */
         }
-        
+        /* CUSTOMIZATION: Content width and spacing
+     * - Change max-width value to adjust the overall width of the content
+     * - Modify padding to change spacing around content
+     */
         .ku-content-wrapper {
-            max-width: 1200px;
+            max-width: 1200px; /* CUSTOMIZE: Adjust for wider/narrower layout */
             margin: 0 auto;
             padding: 20px;
         }
@@ -122,24 +131,41 @@
     <script type="text/babel">
         // Import useState from React
         const { useState } = React;
-        
+        /**
+     * MAIN COMPONENT: Grade Descriptors Application
+     * 
+     * CUSTOMIZATION GUIDE:
+     * 1. To add new grade bands: Add a new entry to the "grades" array below
+     * 2. To modify existing grade bands: Edit the properties of each grade object
+     * 3. To change the default selected grade: Modify the useState initial value
+     */
         const GradeDescriptors = () => {
+            // CUSTOMIZE: Change 'first-plus' to set a different default selected grade
           const [activeGrade, setActiveGrade] = useState('first-plus');
           const [showMatrix, setShowMatrix] = useState(false);
-          
+           // CUSTOMIZE: Grade bands and their properties
+      // Each grade object has the following properties:
+      // - id: Unique identifier for the grade (used for selection)
+      // - title: Display name shown to users
+      // - range: Percentage range for this grade
+      // - color: Background colour - for this a traffic light system has been employed, high to low, green through amber to red, (Tailwind or hex code)
+      // - textColor: Text colour (Tailwind)
+      // - qualities: Array of criteria and descriptions
           const grades = [
             {
               id: 'first-plus',
               title: 'Distinction',
               range: '85% and above',
-              color: 'bg-[#80FF80]',
+              color: 'bg-[#80FF80]', // CUSTOMIZE: Color for this grade band
               textColor: 'text-black',
               qualities: [
+                  // CUSTOMIZE: Add, remove or modify assessment criteria here
                 { title: 'Research & Analysis', description: 'Exceptional levels of research and synthesis. Original and convincing interpretation. Critical examination of context and sources with comprehensive range of evidence.' },
                 { title: 'Experimentation & Practice', description: 'Excellent conceptual exploration and technical skills used to innovate and challenge convention. Testing of subject, thinking through making, technique, risk taking and problem solving.' },
                 { title: 'Communication & Presentation', description: 'Extremely clear, detailed and convincing realisation and presentation showing critical understanding of audience needs. Sensitivity evident in origination and selection of material.' },
                 { title: 'Personal & Professional Development', description: 'Integration of own identity in real or simulated work/subject contexts. Can work highly productively individually, in a team or in a leadership role. Takes full responsibility for own learning.' }
-              ]
+              // Additional qualities would go here...
+            ]
             },
             {
               id: 'first',
@@ -218,6 +244,7 @@
                 { title: 'Communication & Presentation', description: 'Ineffective use of media and communication conventions in presenting ideas. Poor presentation skills that do not meet requirements.' },
                 { title: 'Personal & Professional Development', description: 'Little or no awareness of subject, personal strengths or evidence of reflection or planning and application. Does not work productively individually or in a team.' }
               ]
+             // Additional grade bands would go here...
             }
           ];
           
